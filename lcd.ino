@@ -5,14 +5,16 @@ LiquidCrystal LCD(12, 11, 10, 9, 8, 7);
 int moisture;
 float moisturePercentage;
 
-void setup() {
+void setup()
+{
   // put your setup code here, to run once:
     pinMode(power, OUTPUT);
     pinMode(moistPin, INPUT);
     Serial.begin(9600);
 }
 
-void loop() {
+void loop()
+{
     // Apply power to the soil moisture sensor
     digitalWrite(power, HIGH);
     delay(10); // Wait for 10 millisecond(s)
