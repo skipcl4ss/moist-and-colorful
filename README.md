@@ -4,6 +4,14 @@ A team project that I participated in a year ago and was responsible  for the co
 
 ## Project Characteristics
 
+The project consists of:
+* 1 Arduino Mega 2560
+* 1 Breadboard
+* 1 Moisture sensor
+* 1 220 Ω resistor
+* 1 LCD screen of size 2×16 (used in LCD part only)
+* 1 250 kΩ potentiometer (used in LCD part only)
+* 5 LEDs of various colors (used in LED part only)
 - - - -
 
 ## Arduino Type
