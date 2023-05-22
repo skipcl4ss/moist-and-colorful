@@ -1,5 +1,6 @@
-// Variables for the value of the moisture and the pins of the LEDs
-int moisture = 0;
+#define moistPin A0
+#define power A1
+int moisture;
 int blue = 8;
 int green = 9;
 int yellow = 10;
@@ -8,8 +9,8 @@ int red = 12;
 
 void setup()
 {
-  pinMode(A0, OUTPUT);
-  pinMode(A1, INPUT);
+  pinMode(power, OUTPUT);
+  pinMode(moistPin, INPUT);
   Serial.begin(9600);
   pinMode(blue, OUTPUT);
   pinMode(green, OUTPUT);
@@ -20,12 +21,12 @@ void setup()
 
 void loop()
 {
-    // Apply power to the soil moisture sensor and wait for 10 ms
-    digitalWrite(A0, HIGH);
-    delay(10);
-    moisture = analogRead(A1);
+    // Apply power to the soil moisture sensor
+    digitalWrite(power, HIGH);
+    delay(10); // Wait for 10 millisecond(s)
+    moisture = analogRead(moistPin);
     // Turn off the sensor to reduce metal corrosion over time
-    digitalWrite(A0, LOW);
+    digitalWrite(power, LOW);
     Serial.println(moisture);
     digitalWrite(blue, LOW);
     digitalWrite(green, LOW);
