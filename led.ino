@@ -27,6 +27,7 @@ void loop()
     moisture = analogRead(moistPin);
     // Turn off the sensor to reduce metal corrosion over time
     digitalWrite(power, LOW);
+    Serial.print("moisture: ");
     Serial.println(moisture);
     digitalWrite(blue, LOW);
     digitalWrite(green, LOW);
