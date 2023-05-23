@@ -1,7 +1,7 @@
 #include <LiquidCrystal.h>
 LiquidCrystal LCD(12, 11, 10, 9, 8, 7);
-#define power A1
 #define moistPin A0
+#define power A1
 int moisture;
 float moisturePercentage;
 
