@@ -26,14 +26,28 @@ Arduino Uno (used in Tinkercad simulation).
 
 ### Global Variables
 
-### Functions Used
+* moistPin (Analog, INPUT), power (Digital, OUTPUT): the signal and power pins of the moisture sensor respectively, the power is not connected to a conventional 5V pin as we need to repeatedly switch the sensor on and off to reduce metal corrosion over time.
+* moisture, moisturePercentage: variables to save the reading of the sensor and and turn it into a percentage by multiplying it by the factor 100 / 1023 (100 for the percentace divided by the maximum value of an analog reading).
+* red, orange, yellow, green, blue (Digital, OUTPUT): pins for the five LEDs of those colors (used in the LED part of the project).
 
 ### Main Loop
 
+The code powers the sensor for 10 ms, saves the reading of the sensor to *moisture*, then turns of the sensor to try to avoid corrosion.
+
 #### LCD
+
+The LCD code calculates the *moisturePercentage* in the way we discussed above, prints it on the LCD for 100 ms, then clears the screen to print the new *moisturePercentage* value.
 
 #### LED
 
+The LED code turns off the five LED pins then does something for 100 ms depending on the value of *moisture*  
+If *moisture*:
+* is less than or equal 50, nothing happens.
+* is between 50 and 200, the red LED is turned on.
+* is between 200 and 400, the orange LED is turned on.
+* is between 400 and 600, the yellow LED is turned on.
+* is between 600 and 800, the green LED is turned on.
+* is more than or equal 800, the blue LED is turned on.
 - - - -
 
 ## Project in Action
