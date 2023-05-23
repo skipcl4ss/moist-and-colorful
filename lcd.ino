@@ -19,9 +19,9 @@ void loop()
     digitalWrite(power, HIGH);
     delay(10); // Wait for 10 millisecond(s)
     moisture = analogRead(moistPin);
-    moisturePercentage = (float) 100 * moisture / 1023;
     // Turn off the sensor to reduce metal corrosion over time
     digitalWrite(power, LOW);
+    moisturePercentage = (float) 100 * moisture / 1023;
     Serial.print("moisture: ");
     Serial.println(moisture);
     Serial.print("moisturePercentage: ");
